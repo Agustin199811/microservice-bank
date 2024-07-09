@@ -33,6 +33,15 @@ services:
     networks:
       - bank-network
 
+  frontend-service:
+    build: ./frontend-service
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api-gateway
+    networks:
+      - bank-network
+
 networks:
   bank-network:
     driver: bridge

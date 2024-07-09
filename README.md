@@ -1,4 +1,4 @@
-# Spring Boot Bank Accounts using Dockerfile
+# Microservice for Bank using Spring Boot
 
 This project provides a robust API for managing bank accounts, enabling functionalities such as account creation, balance inquiries, and transactions. It allows users to create new accounts, retrieve account details, and perform deposits and withdrawals. This API enhances the efficiency of banking operations by providing real-time access to account information, ensuring seamless transaction processing, and improving customer satisfaction through transparent and accessible financial services.
 

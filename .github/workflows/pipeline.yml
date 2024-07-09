@@ -1,4 +1,4 @@
-name: CI/CD
+name: Build and Push Docker Images
 
 on:
   push:
@@ -6,17 +6,42 @@ on:
       - main
 
 jobs:
-  build-and-publish:
+  build-and-push:
+    name: Build and Push Docker Images
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout source code
-        uses: actions/checkout@v3
 
-      - name: Build and push Docker images
-        env:
-          DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
-          DOCKER_HUB_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      # Build and push each Dockerfile
+      - name: Build and push account-service
         run: |
-          docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD
-          docker-compose -f docker-compose.yml build
-          docker-compose -f docker-compose.yml push
+          docker build ./account-service -f ./account-service/Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/account-service:latest
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/account-service:latest
+
+      - name: Build and push customer-service
+        run: |
+          docker build ./customer-service -f ./customer-service/Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/customer-service:latest
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/customer-service:latest
+
+      - name: Build and push user-service
+        run: |
+          docker build ./user-service -f ./user-service/Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/user-service:latest
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/user-service:latest
+
+      - name: Build and push api-gateway
+        run: |
+          docker build ./api-gateway -f ./api-gateway/Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/api-gateway:latest
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/api-gateway:latest
+
+      - name: Build and push frontend-service
+        run: |
+          docker build ./frontend-service -f ./frontend-service/Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/frontend-service:latest
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/frontend-service:latest

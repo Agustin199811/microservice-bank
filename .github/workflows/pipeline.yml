@@ -3,7 +3,7 @@ name: CI/CD
 on:
   push:
     branches:
-      - cicd-docker-ec2
+      - main
 
 jobs:
   build-and-publish:

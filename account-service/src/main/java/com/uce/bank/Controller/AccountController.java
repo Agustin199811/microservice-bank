@@ -18,7 +18,7 @@ import com.uce.bank.Service.AccountService;
 
 
 @RestController
-@RequestMapping("/accounts")
+@RequestMapping("/bank/accounts")
 public class AccountController {
 
     @Autowired

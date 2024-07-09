@@ -15,7 +15,7 @@ import com.uce.customer.Model.Customer;
 import com.uce.customer.Service.CustomerService;
 
 @RestController
-@RequestMapping("/customers")
+@RequestMapping("/bank/customers")
 public class CustomerController {
 
     @Autowired

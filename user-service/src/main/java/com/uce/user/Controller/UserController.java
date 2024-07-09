@@ -12,7 +12,7 @@ import com.uce.user.Model.User;
 import com.uce.user.Service.UserService;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/bank/auth")
 public class UserController {
 
     @Autowired

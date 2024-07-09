@@ -37,21 +37,21 @@ This project is currently in development and is being worked on for version 1.0.
 
 The Accounts REST API exposes the following endpoints:
 
-- `GET /accounts`: Retrieve all accounts.
-- `GET /accounts/{id}`: Retrieve an account by ID.
-- `POST /accounts`: Create a new account.
-- `PUT /accounts/{id}/deposit`: Deposit money into an account.
-- `PUT /accounts/{id}/withdraw`: Withdraw money from an account.
+- `GET /bank/accounts`: Retrieve all accounts.
+- `GET /bank//accounts/{id}`: Retrieve an account by ID.
+- `POST /bank/accounts`: Create a new account.
+- `PUT /bank/accounts/{id}/deposit`: Deposit money into an account.
+- `PUT /bank/accounts/{id}/withdraw`: Withdraw money from an account.
 
 The Customers REST API exposes the following endpoints:
 
-- `GET /customers`: Retrieve all customers.
-- `POST /customers`: Create a new customer.
+- `GET /bank/customers`: Retrieve all customers.
+- `POST /bank/customers`: Create a new customer.
 
 The User Auth REST API exposes the following endpoints:
 
-- `POST /auth/register`: Register a new user.
-- `POST /auth/login`: Login with your account.
+- `POST /bank/auth/register`: Register a new user.
+- `POST /bank/auth/login`: Login with your account.
 
 You can use tools such as Postman or cURL to send HTTP requests to these endpoints.
 

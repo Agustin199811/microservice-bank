@@ -19,7 +19,7 @@ This project is currently in development and is being worked on for version 1.0.
 
 1. Clone this repository to your local machine using the following command:
     ```bash
-    git clone https://github.com/Agustin199811/spring-docker-bank.git
+    git clone https://github.com/Agustin199811/microservice-bank.git
 
 2. Import the project into your preferred IDE (e.g., IntelliJ IDEA or Eclipse) as a Maven project.
 

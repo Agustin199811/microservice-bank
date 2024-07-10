@@ -35,7 +35,7 @@ This project is currently in development and is being worked on for version 1.0.
 ## Usage
 
 
-The Accounts REST API exposes the following endpoints:
+The Accounts REST API exposes Microservice 1 the following endpoints:
 
 - `GET /bank/accounts`: Retrieve all accounts.
 - `GET /bank//accounts/{id}`: Retrieve an account by ID.
@@ -43,12 +43,12 @@ The Accounts REST API exposes the following endpoints:
 - `PUT /bank/accounts/{id}/deposit`: Deposit money into an account.
 - `PUT /bank/accounts/{id}/withdraw`: Withdraw money from an account.
 
-The Customers REST API exposes the following endpoints:
+The Customers REST API exposes Microservice 2 the following endpoints:
 
 - `GET /bank/customers`: Retrieve all customers.
 - `POST /bank/customers`: Create a new customer.
 
-The User Auth REST API exposes the following endpoints:
+The User Auth REST API exposes Microservice 3 the following endpoints:
 
 - `POST /bank/auth/register`: Register a new user.
 - `POST /bank/auth/login`: Login with your account.

@@ -1,5 +1,5 @@
 import axios from 'axios'
-const bank_service="http://localhost:8080/bank";
+const bank_service="http://18.117.120.32:8080/bank";
 
 class BankService {
     getAllAccounts(){
